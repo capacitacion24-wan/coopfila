@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: ticketero-postgres
+    environment:
+      POSTGRES_DB: ticketero
+      POSTGRES_USER: ticketero_user
+      POSTGRES_PASSWORD: ticketero_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ticketero-network
+
+  app:
+    build: .
+    container_name: ticketero-app
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ticketero
+      SPRING_DATASOURCE_USERNAME: ticketero_user
+      SPRING_DATASOURCE_PASSWORD: ticketero_pass
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+    ports:
+      - "8080:8080"
+    networks:
+      - ticketero-network
+
+volumes:
+  postgres_data:
+
+networks:
+  ticketero-network:
+    driver: bridge
