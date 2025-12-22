@@ -1,0 +1,161 @@
+@startuml Modelo de Datos - Sistema Ticketero
+
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define primary_key(x) <b>PK: x</b>
+!define foreign_key(x) <color:red>FK: x</color>
+!define unique(x) <color:green>UQ: x</color>
+
+hide methods
+hide stereotypes
+
+' Entidades
+
+Table(cliente, "cliente") {
+  primary_key(id: BIGSERIAL)
+  unique(national_id: VARCHAR(20))
+  nombre: VARCHAR(100)
+  apellido: VARCHAR(100)
+  telefono: VARCHAR(20)
+  email: VARCHAR(100)
+  fecha_nacimiento: DATE
+  created_at: TIMESTAMP
+  updated_at: TIMESTAMP
+}
+
+Table(ticket, "ticket") {
+  primary_key(id: BIGSERIAL)
+  unique(codigo_referencia: UUID)
+  unique(numero: VARCHAR(10))
+  foreign_key(cliente_id: BIGINT)
+  branch_office: VARCHAR(100)
+  queue_type: VARCHAR(20)
+  status: VARCHAR(20)
+  position_in_queue: INTEGER
+  estimated_wait_minutes: INTEGER
+  created_at: TIMESTAMP
+  updated_at: TIMESTAMP
+  foreign_key(assigned_advisor_id: BIGINT)
+  assigned_module_number: INTEGER
+}
+
+Table(mensaje, "mensaje") {
+  primary_key(id: BIGSERIAL)
+  foreign_key(ticket_id: BIGINT)
+  plantilla: VARCHAR(50)
+  estado_envio: VARCHAR(20)
+  fecha_programada: TIMESTAMP
+  fecha_envio: TIMESTAMP
+  telegram_message_id: VARCHAR(50)
+  intentos: INTEGER
+  created_at: TIMESTAMP
+}
+
+Table(advisor, "advisor") {
+  primary_key(id: BIGSERIAL)
+  name: VARCHAR(100)
+  email: VARCHAR(100)
+  status: VARCHAR(20)
+  module_number: INTEGER
+  assigned_tickets_count: INTEGER
+  created_at: TIMESTAMP
+  updated_at: TIMESTAMP
+}
+
+Table(audit_log, "audit_log") {
+  primary_key(id: BIGSERIAL)
+  timestamp: TIMESTAMP
+  tipo_evento: VARCHAR(50)
+  actor: VARCHAR(100)
+  entity_type: VARCHAR(50)
+  entity_id: VARCHAR(50)
+  cambios_estado: JSONB
+  detalles_adicionales: JSONB
+  ip_address: INET
+}
+
+' Relaciones
+
+cliente "1" -- "0..*" ticket : "tiene tickets"
+ticket "1" -- "0..*" mensaje : "tiene mensajes programados"
+advisor "1" -- "0..*" ticket : "atiende tickets"
+
+' Notas
+
+note right of cliente
+  **Datos del Cliente:**
+  - national_id: RUT/ID único
+  - Información personal completa
+  - Teléfono para Telegram
+  - Email para notificaciones futuras
+  
+  **Índices:**
+  - UNIQUE(national_id)
+  - INDEX(telefono)
+end note
+
+note right of ticket
+  **Estados posibles:**
+  - EN_ESPERA
+  - PROXIMO
+  - ATENDIENDO
+  - COMPLETADO
+  - CANCELADO
+  - NO_ATENDIDO
+  
+  **Tipos de cola:**
+  - CAJA
+  - PERSONAL_BANKER
+  - EMPRESAS
+  - GERENCIA
+  
+  **Índices:**
+  - UNIQUE(codigo_referencia)
+  - UNIQUE(numero)
+  - INDEX(cliente_id)
+  - INDEX(status)
+end note
+
+note right of mensaje
+  **Plantillas:**
+  - totem_ticket_creado
+  - totem_proximo_turno
+  - totem_es_tu_turno
+  
+  **Estados:**
+  - PENDIENTE
+  - ENVIADO
+  - FALLIDO
+  
+  **Índices:**
+  - INDEX(ticket_id)
+  - INDEX(estado_envio, fecha_programada)
+end note
+
+note right of advisor
+  **Estados:**
+  - AVAILABLE
+  - BUSY
+  - OFFLINE
+  
+  **Módulos:** 1-5
+  
+  **Índices:**
+  - INDEX(status)
+  - INDEX(assigned_tickets_count)
+end note
+
+note right of audit_log
+  **Eventos Auditados:**
+  - TICKET_CREADO
+  - TICKET_ASIGNADO
+  - TICKET_COMPLETADO
+  - MENSAJE_ENVIADO
+  - ASESOR_ESTADO_CAMBIADO
+  
+  **Índices:**
+  - INDEX(timestamp)
+  - INDEX(entity_type, entity_id)
+  - INDEX(tipo_evento)
+end note
+
+@enduml
