@@ -1,0 +1,44 @@
+# =============================================================================
+# CDK Validation Dockerfile
+# =============================================================================
+# Imagen para validar CDK sin AWS credentials
+# Usage: docker build -t cdk-validator . && docker run cdk-validator
+# =============================================================================
+
+FROM maven:3.9-eclipse-temurin-21-alpine
+
+# Install CDK CLI and tools
+RUN apk add --no-cache \
+    nodejs \
+    npm \
+    jq \
+    bash \
+    curl
+
+# Install AWS CDK
+RUN npm install -g aws-cdk@2.150.0
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files
+COPY pom.xml .
+COPY cdk.json .
+COPY src/ src/
+COPY validate-cdk.sh .
+
+# Make script executable
+RUN chmod +x validate-cdk.sh
+
+# Download dependencies
+RUN mvn dependency:resolve
+
+# Set dummy AWS credentials for validation
+ENV AWS_DEFAULT_REGION=us-east-1
+ENV AWS_ACCESS_KEY_ID=dummy
+ENV AWS_SECRET_ACCESS_KEY=dummy
+ENV CDK_DEFAULT_ACCOUNT=123456789012
+ENV CDK_DEFAULT_REGION=us-east-1
+
+# Run validation
+CMD ["./validate-cdk.sh"]

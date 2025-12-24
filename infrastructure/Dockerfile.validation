@@ -1,0 +1,30 @@
+FROM eclipse-temurin:21-jdk
+
+# Install required tools
+RUN apt-get update && apt-get install -y \
+    curl \
+    unzip \
+    nodejs \
+    npm \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Maven
+RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz | tar xzf - -C /opt \
+    && ln -s /opt/apache-maven-3.9.6 /opt/maven \
+    && ln -s /opt/maven/bin/mvn /usr/local/bin/mvn
+
+# Install AWS CDK
+RUN npm install -g aws-cdk@2.110.0
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy infrastructure code
+COPY . ./
+
+# Set Maven environment
+ENV MAVEN_HOME=/opt/maven
+ENV PATH=$PATH:$MAVEN_HOME/bin
+
+# Default command
+CMD ["bash"]

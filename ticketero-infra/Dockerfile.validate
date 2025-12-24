@@ -1,0 +1,19 @@
+FROM maven:3.9-eclipse-temurin-21
+
+WORKDIR /app
+
+# Copy CDK project
+COPY pom.xml .
+COPY src ./src
+COPY cdk.json .
+
+# Install dependencies and compile
+RUN mvn clean compile
+
+# Validate CDK syntax (without deploy)
+RUN echo "✅ Java compilation successful"
+
+# Run tests
+RUN mvn test
+
+CMD ["echo", "CDK validation complete"]

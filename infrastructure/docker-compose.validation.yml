@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  cdk-validator:
+    build:
+      context: .
+      dockerfile: Dockerfile.validation
+    container_name: coopfila-cdk-validator
+    volumes:
+      - .:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /workspace
+    command: ["./validate-cdk.sh"]
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCOUNT_ID=123456789012

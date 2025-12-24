@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  cdk-validator:
+    build:
+      context: .
+      dockerfile: Dockerfile.validation
+    container_name: cdk-validator
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - CDK_DEFAULT_ACCOUNT=123456789012
+      - CDK_DEFAULT_REGION=us-east-1
+    working_dir: /app
+    command: ["./validate-cdk.sh"]
+    
+  cdk-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.validation
+    container_name: cdk-dev
+    volumes:
+      - .:/app
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+    working_dir: /app
+    command: ["tail", "-f", "/dev/null"]  # Keep container running for interactive use
