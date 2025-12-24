@@ -37,14 +37,14 @@ public class AuditLog {
     private String entityId;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "cambios_estado", columnDefinition = "jsonb")
+    @Column(name = "cambios_estado")
     private Map<String, Object> cambiosEstado;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "detalles_adicionales", columnDefinition = "jsonb")
+    @Column(name = "detalles_adicionales")
     private Map<String, Object> detallesAdicionales;
 
-    @Column(name = "ip_address", columnDefinition = "inet")
+    @Column(name = "ip_address")
     private String ipAddress;
 
     @PrePersist

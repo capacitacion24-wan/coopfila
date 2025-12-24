@@ -71,7 +71,7 @@ public class TicketService {
     }
 
     private String generateTicketNumber(com.example.ticketero.model.enums.QueueType queueType, long position) {
-        return queueType.getPrefix() + String.format("%02d", position);
+        return queueType.getPrefix() + String.format("%03d", position);
     }
 
     private TicketResponse toResponse(Ticket ticket) {

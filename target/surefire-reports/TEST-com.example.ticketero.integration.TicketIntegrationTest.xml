@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.ticketero.integration.TicketIntegrationTest" time="74.777" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/app/target/test-classes:/app/target/classes:/root/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.11/spring-boot-starter-web-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.11/spring-boot-starter-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot/3.2.11/spring-boot-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.11/spring-boot-autoconfigure-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.11/spring-boot-starter-logging-3.2.11.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/root/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/root/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/root/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.11/spring-boot-starter-json-3.2.11.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.11/spring-boot-starter-tomcat-3.2.11.jar:/root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.31/tomcat-embed-core-10.1.31.jar:/root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.31/tomcat-embed-websocket-10.1.31.jar:/root/.m2/repository/org/springframework/spring-web/6.1.14/spring-web-6.1.14.jar:/root/.m2/repository/org/springframework/spring-beans/6.1.14/spring-beans-6.1.14.jar:/root/.m2/repository/org/springframework/spring-webmvc/6.1.14/spring-webmvc-6.1.14.jar:/root/.m2/repository/org/springframework/spring-aop/6.1.14/spring-aop-6.1.14.jar:/root/.m2/repository/org/springframework/spring-context/6.1.14/spring-context-6.1.14.jar:/root/.m2/repository/org/springframework/spring-expression/6.1.14/spring-expression-6.1.14.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.11/spring-boot-starter-data-jpa-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.11/spring-boot-starter-aop-3.2.11.jar:/root/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.11/spring-boot-starter-jdbc-3.2.11.jar:/root/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/root/.m2/repository/org/springframework/spring-jdbc/6.1.14/spring-jdbc-6.1.14.jar:/root/.m2/repository/org/hibernate/orm/hibernate-core/6.4.10.Final/hibernate-core-6.4.10.Final.jar:/root/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/root/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/root/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/root/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/root/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/root/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/root/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/root/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/root/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/root/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/root/.m2/repository/org/springframework/data/spring-data-jpa/3.2.11/spring-data-jpa-3.2.11.jar:/root/.m2/repository/org/springframework/data/spring-data-commons/3.2.11/spring-data-commons-3.2.11.jar:/root/.m2/repository/org/springframework/spring-orm/6.1.14/spring-orm-6.1.14.jar:/root/.m2/repository/org/springframework/spring-tx/6.1.14/spring-tx-6.1.14.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/root/.m2/repository/org/springframework/spring-aspects/6.1.14/spring-aspects-6.1.14.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.11/spring-boot-starter-validation-3.2.11.jar:/root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.31/tomcat-embed-el-10.1.31.jar:/root/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/root/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.2.11/spring-boot-starter-actuator-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.2.11/spring-boot-actuator-autoconfigure-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-actuator/3.2.11/spring-boot-actuator-3.2.11.jar:/root/.m2/repository/io/micrometer/micrometer-observation/1.12.11/micrometer-observation-1.12.11.jar:/root/.m2/repository/io/micrometer/micrometer-commons/1.12.11/micrometer-commons-1.12.11.jar:/root/.m2/repository/io/micrometer/micrometer-jakarta9/1.12.11/micrometer-jakarta9-1.12.11.jar:/root/.m2/repository/io/micrometer/micrometer-core/1.12.11/micrometer-core-1.12.11.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar:/root/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/root/.m2/repository/org/postgresql/postgresql/42.6.2/postgresql-42.6.2.jar:/root/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/root/.m2/repository/org/flywaydb/flyway-core/9.22.3/flyway-core-9.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.4/jackson-dataformat-toml-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar:/root/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.11/spring-boot-starter-test-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-test/3.2.11/spring-boot-test-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.11/spring-boot-test-autoconfigure-3.2.11.jar:/root/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/root/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/root/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/root/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/root/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/root/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/root/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/root/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.5/junit-jupiter-api-5.10.5.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.10.5/junit-platform-commons-1.10.5.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.5/junit-jupiter-params-5.10.5.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.5/junit-jupiter-engine-5.10.5.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.10.5/junit-platform-engine-1.10.5.jar:/root/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar:/root/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/root/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/root/.m2/repository/org/springframework/spring-core/6.1.14/spring-core-6.1.14.jar:/root/.m2/repository/org/springframework/spring-jcl/6.1.14/spring-jcl-6.1.14.jar:/root/.m2/repository/org/springframework/spring-test/6.1.14/spring-test-6.1.14.jar:/root/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/root/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/opt/java/openjdk/lib"/>
+    <property name="sun.java.command" value="/app/target/surefire/surefirebooter-20251223233600153_3.jar /app/target/surefire 2025-12-23T23-35-59_135-jvmRun1 surefire-20251223233600153_1tmp surefire_0-20251223233600153_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/app/target/test-classes:/app/target/classes:/root/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.11/spring-boot-starter-web-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.11/spring-boot-starter-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot/3.2.11/spring-boot-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.11/spring-boot-autoconfigure-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.11/spring-boot-starter-logging-3.2.11.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/root/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/root/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/root/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.11/spring-boot-starter-json-3.2.11.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.11/spring-boot-starter-tomcat-3.2.11.jar:/root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.31/tomcat-embed-core-10.1.31.jar:/root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.31/tomcat-embed-websocket-10.1.31.jar:/root/.m2/repository/org/springframework/spring-web/6.1.14/spring-web-6.1.14.jar:/root/.m2/repository/org/springframework/spring-beans/6.1.14/spring-beans-6.1.14.jar:/root/.m2/repository/org/springframework/spring-webmvc/6.1.14/spring-webmvc-6.1.14.jar:/root/.m2/repository/org/springframework/spring-aop/6.1.14/spring-aop-6.1.14.jar:/root/.m2/repository/org/springframework/spring-context/6.1.14/spring-context-6.1.14.jar:/root/.m2/repository/org/springframework/spring-expression/6.1.14/spring-expression-6.1.14.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.11/spring-boot-starter-data-jpa-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.11/spring-boot-starter-aop-3.2.11.jar:/root/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.11/spring-boot-starter-jdbc-3.2.11.jar:/root/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/root/.m2/repository/org/springframework/spring-jdbc/6.1.14/spring-jdbc-6.1.14.jar:/root/.m2/repository/org/hibernate/orm/hibernate-core/6.4.10.Final/hibernate-core-6.4.10.Final.jar:/root/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/root/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/root/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/root/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/root/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/root/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/root/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/root/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/root/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/root/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/root/.m2/repository/org/springframework/data/spring-data-jpa/3.2.11/spring-data-jpa-3.2.11.jar:/root/.m2/repository/org/springframework/data/spring-data-commons/3.2.11/spring-data-commons-3.2.11.jar:/root/.m2/repository/org/springframework/spring-orm/6.1.14/spring-orm-6.1.14.jar:/root/.m2/repository/org/springframework/spring-tx/6.1.14/spring-tx-6.1.14.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/root/.m2/repository/org/springframework/spring-aspects/6.1.14/spring-aspects-6.1.14.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.11/spring-boot-starter-validation-3.2.11.jar:/root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.31/tomcat-embed-el-10.1.31.jar:/root/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/root/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.2.11/spring-boot-starter-actuator-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.2.11/spring-boot-actuator-autoconfigure-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-actuator/3.2.11/spring-boot-actuator-3.2.11.jar:/root/.m2/repository/io/micrometer/micrometer-observation/1.12.11/micrometer-observation-1.12.11.jar:/root/.m2/repository/io/micrometer/micrometer-commons/1.12.11/micrometer-commons-1.12.11.jar:/root/.m2/repository/io/micrometer/micrometer-jakarta9/1.12.11/micrometer-jakarta9-1.12.11.jar:/root/.m2/repository/io/micrometer/micrometer-core/1.12.11/micrometer-core-1.12.11.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar:/root/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/root/.m2/repository/org/postgresql/postgresql/42.6.2/postgresql-42.6.2.jar:/root/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/root/.m2/repository/org/flywaydb/flyway-core/9.22.3/flyway-core-9.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.4/jackson-dataformat-toml-2.15.4.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar:/root/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.11/spring-boot-starter-test-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-test/3.2.11/spring-boot-test-3.2.11.jar:/root/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.11/spring-boot-test-autoconfigure-3.2.11.jar:/root/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/root/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/root/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/root/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/root/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/root/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/root/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/root/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.5/junit-jupiter-api-5.10.5.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.10.5/junit-platform-commons-1.10.5.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.5/junit-jupiter-params-5.10.5.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.5/junit-jupiter-engine-5.10.5.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.10.5/junit-platform-engine-1.10.5.jar:/root/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar:/root/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/root/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/root/.m2/repository/org/springframework/spring-core/6.1.14/spring-core-6.1.14.jar:/root/.m2/repository/org/springframework/spring-jcl/6.1.14/spring-jcl-6.1.14.jar:/root/.m2/repository/org/springframework/spring-test/6.1.14/spring-test-6.1.14.jar:/root/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/root/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:"/>
+    <property name="test" value="*IntegrationTest"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/opt/java/openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/app"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/app/target/surefire/surefirebooter-20251223233600153_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.9+10-LTS"/>
+    <property name="user.name" value="root"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.6.87.2-microsoft-standard-WSL2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.9+10"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.9"/>
+    <property name="user.dir" value="/app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="3102"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.9+10-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[ticketero-api-test] "/>
+  </properties>
+  <testcase name="createTicket_clienteInexistente_debeRetornar400" classname="com.example.ticketero.integration.TicketIntegrationTest" time="6.78">
+    <system-out><![CDATA[23:36:04.895 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.ticketero.integration.TicketIntegrationTest]: TicketIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:36:06.375 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.ticketero.TicketeroApplication for test class com.example.ticketero.integration.TicketIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v3.2.11)
+
+2025-12-23T23:36:10.829Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.t.integration.TicketIntegrationTest  : Starting TicketIntegrationTest using Java 21.0.9 with PID 3102 (started by root in /app)
+2025-12-23T23:36:10.834Z DEBUG 3102 --- [ticketero-api-test] [           main] c.e.t.integration.TicketIntegrationTest  : Running with Spring Boot v3.2.11, Spring v6.1.14
+2025-12-23T23:36:10.836Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.t.integration.TicketIntegrationTest  : The following 1 profile is active: "test"
+2025-12-23T23:36:11.107Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@607b2792
+2025-12-23T23:36:22.075Z  INFO 3102 --- [ticketero-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-23T23:36:23.364Z  INFO 3102 --- [ticketero-api-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1220 ms. Found 5 JPA repository interfaces.
+2025-12-23T23:36:29.278Z  INFO 3102 --- [ticketero-api-test] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-23T23:36:30.346Z  INFO 3102 --- [ticketero-api-test] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.10.Final
+2025-12-23T23:36:30.759Z  INFO 3102 --- [ticketero-api-test] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-23T23:36:34.637Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-23T23:36:34.989Z  INFO 3102 --- [ticketero-api-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-23T23:36:37.516Z  INFO 3102 --- [ticketero-api-test] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-12-23T23:36:37.540Z  INFO 3102 --- [ticketero-api-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-23T23:36:37.829Z  WARN 3102 --- [ticketero-api-test] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-23T23:36:49.163Z  INFO 3102 --- [ticketero-api-test] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-23T23:36:49.366Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    drop table if exists advisor cascade 
+Hibernate: 
+    drop table if exists advisor cascade 
+2025-12-23T23:36:49.408Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    drop table if exists audit_log cascade 
+Hibernate: 
+    drop table if exists audit_log cascade 
+2025-12-23T23:36:49.414Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    drop table if exists cliente cascade 
+Hibernate: 
+    drop table if exists cliente cascade 
+2025-12-23T23:36:49.415Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    drop table if exists mensaje cascade 
+Hibernate: 
+    drop table if exists mensaje cascade 
+2025-12-23T23:36:49.416Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    drop table if exists ticket cascade 
+Hibernate: 
+    drop table if exists ticket cascade 
+2025-12-23T23:36:49.480Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    create table advisor (
+        assigned_tickets_count integer not null,
+        module_number integer not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6) not null,
+        status varchar(20) not null check (status in ('AVAILABLE','BUSY','OFFLINE')),
+        email varchar(100) not null unique,
+        name varchar(100) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table advisor (
+        assigned_tickets_count integer not null,
+        module_number integer not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6) not null,
+        status varchar(20) not null check (status in ('AVAILABLE','BUSY','OFFLINE')),
+        email varchar(100) not null unique,
+        name varchar(100) not null,
+        primary key (id)
+    )
+2025-12-23T23:36:49.573Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    create table audit_log (
+        id bigint generated by default as identity,
+        timestamp timestamp(6) not null,
+        entity_id varchar(50) not null,
+        entity_type varchar(50) not null,
+        tipo_evento varchar(50) not null,
+        actor varchar(100) not null,
+        ip_address varchar(255),
+        cambios_estado json,
+        detalles_adicionales json,
+        primary key (id)
+    )
+Hibernate: 
+    create table audit_log (
+        id bigint generated by default as identity,
+        timestamp timestamp(6) not null,
+        entity_id varchar(50) not null,
+        entity_type varchar(50) not null,
+        tipo_evento varchar(50) not null,
+        actor varchar(100) not null,
+        ip_address varchar(255),
+        cambios_estado json,
+        detalles_adicionales json,
+        primary key (id)
+    )
+2025-12-23T23:36:49.580Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    create table cliente (
+        fecha_nacimiento date,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        national_id varchar(20) not null unique,
+        telefono varchar(20),
+        apellido varchar(100) not null,
+        email varchar(100),
+        nombre varchar(100) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table cliente (
+        fecha_nacimiento date,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        national_id varchar(20) not null unique,
+        telefono varchar(20),
+        apellido varchar(100) not null,
+        email varchar(100),
+        nombre varchar(100) not null,
+        primary key (id)
+    )
+2025-12-23T23:36:49.586Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    create table mensaje (
+        intentos integer not null,
+        created_at timestamp(6) not null,
+        fecha_envio timestamp(6),
+        fecha_programada timestamp(6) not null,
+        id bigint generated by default as identity,
+        ticket_id bigint not null,
+        estado_envio varchar(20) not null check (estado_envio in ('PENDIENTE','ENVIADO','FALLIDO')),
+        plantilla varchar(50) not null check (plantilla in ('TOTEM_TICKET_CREADO','TOTEM_PROXIMO_TURNO','TOTEM_ES_TU_TURNO')),
+        telegram_message_id varchar(50),
+        primary key (id)
+    )
+Hibernate: 
+    create table mensaje (
+        intentos integer not null,
+        created_at timestamp(6) not null,
+        fecha_envio timestamp(6),
+        fecha_programada timestamp(6) not null,
+        id bigint generated by default as identity,
+        ticket_id bigint not null,
+        estado_envio varchar(20) not null check (estado_envio in ('PENDIENTE','ENVIADO','FALLIDO')),
+        plantilla varchar(50) not null check (plantilla in ('TOTEM_TICKET_CREADO','TOTEM_PROXIMO_TURNO','TOTEM_ES_TU_TURNO')),
+        telegram_message_id varchar(50),
+        primary key (id)
+    )
+2025-12-23T23:36:49.591Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    create table ticket (
+        assigned_module_number integer,
+        estimated_wait_minutes integer not null,
+        position_in_queue integer not null,
+        assigned_advisor_id bigint,
+        cliente_id bigint not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6) not null,
+        numero varchar(10) not null unique,
+        codigo_referencia uuid not null unique,
+        queue_type varchar(20) not null check (queue_type in ('CAJA','PERSONAL_BANKER','EMPRESAS','GERENCIA')),
+        status varchar(20) not null check (status in ('EN_ESPERA','PROXIMO','ATENDIENDO','COMPLETADO','CANCELADO','NO_ATENDIDO')),
+        branch_office varchar(100) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table ticket (
+        assigned_module_number integer,
+        estimated_wait_minutes integer not null,
+        position_in_queue integer not null,
+        assigned_advisor_id bigint,
+        cliente_id bigint not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6) not null,
+        numero varchar(10) not null unique,
+        codigo_referencia uuid not null unique,
+        queue_type varchar(20) not null check (queue_type in ('CAJA','PERSONAL_BANKER','EMPRESAS','GERENCIA')),
+        status varchar(20) not null check (status in ('EN_ESPERA','PROXIMO','ATENDIENDO','COMPLETADO','CANCELADO','NO_ATENDIDO')),
+        branch_office varchar(100) not null,
+        primary key (id)
+    )
+2025-12-23T23:36:49.597Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    alter table if exists mensaje 
+       add constraint FK3qn39n5gv723602ui00hno4q6 
+       foreign key (ticket_id) 
+       references ticket
+Hibernate: 
+    alter table if exists mensaje 
+       add constraint FK3qn39n5gv723602ui00hno4q6 
+       foreign key (ticket_id) 
+       references ticket
+2025-12-23T23:36:49.672Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    alter table if exists ticket 
+       add constraint FKjg0b5opj7k40seodv6nu2yg0o 
+       foreign key (assigned_advisor_id) 
+       references advisor
+Hibernate: 
+    alter table if exists ticket 
+       add constraint FKjg0b5opj7k40seodv6nu2yg0o 
+       foreign key (assigned_advisor_id) 
+       references advisor
+2025-12-23T23:36:49.676Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    alter table if exists ticket 
+       add constraint FK5uy1hjp8fd85yq09gqoyuh360 
+       foreign key (cliente_id) 
+       references cliente
+Hibernate: 
+    alter table if exists ticket 
+       add constraint FK5uy1hjp8fd85yq09gqoyuh360 
+       foreign key (cliente_id) 
+       references cliente
+2025-12-23T23:36:49.721Z  INFO 3102 --- [ticketero-api-test] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T23:36:53.518Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-23T23:37:00.363Z  WARN 3102 --- [ticketero-api-test] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-23T23:37:01.483Z DEBUG 3102 --- [ticketero-api-test] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2025-12-23T23:37:03.352Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-23T23:37:03.713Z DEBUG 3102 --- [ticketero-api-test] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-23T23:37:04.075Z DEBUG 3102 --- [ticketero-api-test] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-23T23:37:08.358Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-12-23T23:37:08.698Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2025-12-23T23:37:08.703Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-23T23:37:08.703Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-23T23:37:08.736Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-12-23T23:37:08.975Z  INFO 3102 --- [ticketero-api-test] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 269 ms
+2025-12-23T23:37:09.347Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.t.integration.TicketIntegrationTest  : Started TicketIntegrationTest in 61.543 seconds (process running for 68.888)
+2025-12-23T23:37:10.232Z DEBUG 3102 --- [ticketero-api-test] [   scheduling-1] org.hibernate.SQL                        : 
+    /* SELECT
+        m 
+    FROM
+        Mensaje m 
+    WHERE
+        m.estadoEnvio = :estado 
+        AND m.fechaProgramada <= :fecha 
+    ORDER BY
+        m.fechaProgramada ASC  */ select
+            m1_0.id,
+            m1_0.created_at,
+            m1_0.estado_envio,
+            m1_0.fecha_envio,
+            m1_0.fecha_programada,
+            m1_0.intentos,
+            m1_0.plantilla,
+            m1_0.telegram_message_id,
+            m1_0.ticket_id 
+        from
+            mensaje m1_0 
+        where
+            m1_0.estado_envio=? 
+            and m1_0.fecha_programada<=? 
+        order by
+            m1_0.fecha_programada
+Hibernate: 
+    /* SELECT
+        m 
+    FROM
+        Mensaje m 
+    WHERE
+        m.estadoEnvio = :estado 
+        AND m.fechaProgramada <= :fecha 
+    ORDER BY
+        m.fechaProgramada ASC  */ select
+            m1_0.id,
+            m1_0.created_at,
+            m1_0.estado_envio,
+            m1_0.fecha_envio,
+            m1_0.fecha_programada,
+            m1_0.intentos,
+            m1_0.plantilla,
+            m1_0.telegram_message_id,
+            m1_0.ticket_id 
+        from
+            mensaje m1_0 
+        where
+            m1_0.estado_envio=? 
+            and m1_0.fecha_programada<=? 
+        order by
+            m1_0.fecha_programada
+2025-12-23T23:37:10.424Z DEBUG 3102 --- [ticketero-api-test] [   scheduling-1] org.hibernate.SQL                        : 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+Hibernate: 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+2025-12-23T23:37:10.443Z DEBUG 3102 --- [ticketero-api-test] [   scheduling-1] org.hibernate.SQL                        : 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+Hibernate: 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+2025-12-23T23:37:13.247Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at,
+        t1_0.cliente_id,
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        cliente c1_0 
+    left join
+        ticket t1_0 
+            on c1_0.id=t1_0.cliente_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at,
+        t1_0.cliente_id,
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        cliente c1_0 
+    left join
+        ticket t1_0 
+            on c1_0.id=t1_0.cliente_id 
+    where
+        c1_0.id=?
+2025-12-23T23:37:13.469Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Cliente */insert 
+    into
+        cliente (apellido, created_at, email, fecha_nacimiento, national_id, nombre, telefono, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Cliente */insert 
+    into
+        cliente (apellido, created_at, email, fecha_nacimiento, national_id, nombre, telefono, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:14.345Z DEBUG 3102 --- [ticketero-api-test] [   scheduling-1] org.hibernate.SQL                        : 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+Hibernate: 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+2025-12-23T23:37:14.349Z DEBUG 3102 --- [ticketero-api-test] [   scheduling-1] org.hibernate.SQL                        : 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+Hibernate: 
+    /* SELECT
+        t 
+    FROM
+        Ticket t 
+    JOIN
+        
+    FETCH
+        t.cliente 
+    WHERE
+        t.status = :status 
+    ORDER BY
+        t.createdAt ASC  */ select
+            t1_0.id,
+            t1_0.assigned_advisor_id,
+            t1_0.assigned_module_number,
+            t1_0.branch_office,
+            t1_0.cliente_id,
+            c1_0.id,
+            c1_0.apellido,
+            c1_0.created_at,
+            c1_0.email,
+            c1_0.fecha_nacimiento,
+            c1_0.national_id,
+            c1_0.nombre,
+            c1_0.telefono,
+            c1_0.updated_at,
+            t1_0.codigo_referencia,
+            t1_0.created_at,
+            t1_0.estimated_wait_minutes,
+            t1_0.numero,
+            t1_0.position_in_queue,
+            t1_0.queue_type,
+            t1_0.status,
+            t1_0.updated_at 
+        from
+            ticket t1_0 
+        join
+            cliente c1_0 
+                on c1_0.id=t1_0.cliente_id 
+        where
+            t1_0.status=? 
+        order by
+            t1_0.created_at
+2025-12-23T23:37:14.366Z DEBUG 3102 --- [ticketero-api-test] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.ticketero.controller.TicketController#createTicket(TicketRequest)
+2025-12-23T23:37:14.867Z DEBUG 3102 --- [ticketero-api-test] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [TicketRequest[clienteId=999, branchOffice=Sucursal Centro, queueType=CAJA]]
+2025-12-23T23:37:15.608Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.t.controller.TicketController        : Creating ticket for cliente: 999
+2025-12-23T23:37:15.609Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.TicketService      : Creating ticket for cliente: 999
+2025-12-23T23:37:15.638Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at 
+    from
+        cliente c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at 
+    from
+        cliente c1_0 
+    where
+        c1_0.id=?
+2025-12-23T23:37:15.659Z DEBUG 3102 --- [ticketero-api-test] [           main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.ticketero.exception.GlobalExceptionHandler#handleRuntime(RuntimeException)
+2025-12-23T23:37:15.660Z ERROR 3102 --- [ticketero-api-test] [           main] c.e.t.exception.GlobalExceptionHandler   : Runtime error: Cliente not found
+2025-12-23T23:37:15.828Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-23T23:37:15.841Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[message=Cliente not found, status=400, timestamp=2025-12-23T23:37:15.744939011, errors (truncated)...]
+2025-12-23T23:37:15.895Z DEBUG 3102 --- [ticketero-api-test] [           main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Cliente not found]
+]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="createTicket_conDatosValidos_debeCrearTicket" classname="com.example.ticketero.integration.TicketIntegrationTest" time="1.504">
+    <system-out><![CDATA[2025-12-23T23:37:16.609Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at,
+        t1_0.cliente_id,
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        cliente c1_0 
+    left join
+        ticket t1_0 
+            on c1_0.id=t1_0.cliente_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at,
+        t1_0.cliente_id,
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        cliente c1_0 
+    left join
+        ticket t1_0 
+            on c1_0.id=t1_0.cliente_id 
+    where
+        c1_0.id=?
+2025-12-23T23:37:16.616Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Cliente */insert 
+    into
+        cliente (apellido, created_at, email, fecha_nacimiento, national_id, nombre, telefono, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Cliente */insert 
+    into
+        cliente (apellido, created_at, email, fecha_nacimiento, national_id, nombre, telefono, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:16.621Z DEBUG 3102 --- [ticketero-api-test] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.ticketero.controller.TicketController#createTicket(TicketRequest)
+2025-12-23T23:37:16.622Z DEBUG 3102 --- [ticketero-api-test] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [TicketRequest[clienteId=2, branchOffice=Sucursal Centro, queueType=CAJA]]
+2025-12-23T23:37:16.628Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.t.controller.TicketController        : Creating ticket for cliente: 2
+2025-12-23T23:37:16.629Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.TicketService      : Creating ticket for cliente: 2
+2025-12-23T23:37:16.933Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        count(t1_0.id) 
+    from
+        ticket t1_0 
+    where
+        t1_0.queue_type=? 
+        and t1_0.status=?
+Hibernate: 
+    /* <criteria> */ select
+        count(t1_0.id) 
+    from
+        ticket t1_0 
+    where
+        t1_0.queue_type=? 
+        and t1_0.status=?
+2025-12-23T23:37:16.997Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Ticket */insert 
+    into
+        ticket (assigned_advisor_id, assigned_module_number, branch_office, cliente_id, codigo_referencia, created_at, estimated_wait_minutes, numero, position_in_queue, queue_type, status, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Ticket */insert 
+    into
+        ticket (assigned_advisor_id, assigned_module_number, branch_office, cliente_id, codigo_referencia, created_at, estimated_wait_minutes, numero, position_in_queue, queue_type, status, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:17.045Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.MensajeService     : Scheduling messages for ticket: C001
+2025-12-23T23:37:17.052Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:17.056Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:17.058Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:17.131Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.AuditLog */insert 
+    into
+        audit_log (actor, cambios_estado, detalles_adicionales, entity_id, entity_type, ip_address, timestamp, tipo_evento, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.AuditLog */insert 
+    into
+        audit_log (actor, cambios_estado, detalles_adicionales, entity_id, entity_type, ip_address, timestamp, tipo_evento, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:17.167Z DEBUG 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.AuditService       : Audit event logged: TICKET_CREADO for 1
+2025-12-23T23:37:17.188Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-23T23:37:17.229Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TicketResponse[id=1, codigoReferencia=6a921a0f-45bf-4c98-bf19-ec3f1e58e89f, numero=C001, clienteId=2 (truncated)...]
+2025-12-23T23:37:18.082Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* select
+        count(*) 
+    from
+        Ticket x */ select
+            count(*) 
+        from
+            ticket t1_0
+Hibernate: 
+    /* select
+        count(*) 
+    from
+        Ticket x */ select
+            count(*) 
+        from
+            ticket t1_0
+]]></system-out>
+  </testcase>
+  <testcase name="getTicket_conCodigoValido_debeRetornarTicket" classname="com.example.ticketero.integration.TicketIntegrationTest" time="0.117">
+    <system-out><![CDATA[2025-12-23T23:37:18.115Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at,
+        t1_0.cliente_id,
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        cliente c1_0 
+    left join
+        ticket t1_0 
+            on c1_0.id=t1_0.cliente_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.apellido,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.fecha_nacimiento,
+        c1_0.national_id,
+        c1_0.nombre,
+        c1_0.telefono,
+        c1_0.updated_at,
+        t1_0.cliente_id,
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        cliente c1_0 
+    left join
+        ticket t1_0 
+            on c1_0.id=t1_0.cliente_id 
+    where
+        c1_0.id=?
+2025-12-23T23:37:18.119Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Cliente */insert 
+    into
+        cliente (apellido, created_at, email, fecha_nacimiento, national_id, nombre, telefono, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Cliente */insert 
+    into
+        cliente (apellido, created_at, email, fecha_nacimiento, national_id, nombre, telefono, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:18.127Z DEBUG 3102 --- [ticketero-api-test] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.ticketero.controller.TicketController#createTicket(TicketRequest)
+2025-12-23T23:37:18.129Z DEBUG 3102 --- [ticketero-api-test] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [TicketRequest[clienteId=3, branchOffice=Sucursal Centro, queueType=CAJA]]
+2025-12-23T23:37:18.130Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.t.controller.TicketController        : Creating ticket for cliente: 3
+2025-12-23T23:37:18.131Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.TicketService      : Creating ticket for cliente: 3
+2025-12-23T23:37:18.135Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        count(t1_0.id) 
+    from
+        ticket t1_0 
+    where
+        t1_0.queue_type=? 
+        and t1_0.status=?
+Hibernate: 
+    /* <criteria> */ select
+        count(t1_0.id) 
+    from
+        ticket t1_0 
+    where
+        t1_0.queue_type=? 
+        and t1_0.status=?
+2025-12-23T23:37:18.146Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Ticket */insert 
+    into
+        ticket (assigned_advisor_id, assigned_module_number, branch_office, cliente_id, codigo_referencia, created_at, estimated_wait_minutes, numero, position_in_queue, queue_type, status, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Ticket */insert 
+    into
+        ticket (assigned_advisor_id, assigned_module_number, branch_office, cliente_id, codigo_referencia, created_at, estimated_wait_minutes, numero, position_in_queue, queue_type, status, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:18.149Z  INFO 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.MensajeService     : Scheduling messages for ticket: C001
+2025-12-23T23:37:18.151Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:18.157Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:18.162Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.Mensaje */insert 
+    into
+        mensaje (created_at, estado_envio, fecha_envio, fecha_programada, intentos, plantilla, telegram_message_id, ticket_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:18.167Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* insert for
+        com.example.ticketero.model.entity.AuditLog */insert 
+    into
+        audit_log (actor, cambios_estado, detalles_adicionales, entity_id, entity_type, ip_address, timestamp, tipo_evento, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    /* insert for
+        com.example.ticketero.model.entity.AuditLog */insert 
+    into
+        audit_log (actor, cambios_estado, detalles_adicionales, entity_id, entity_type, ip_address, timestamp, tipo_evento, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-12-23T23:37:18.169Z DEBUG 3102 --- [ticketero-api-test] [           main] c.e.ticketero.service.AuditService       : Audit event logged: TICKET_CREADO for 2
+2025-12-23T23:37:18.170Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-23T23:37:18.170Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TicketResponse[id=2, codigoReferencia=4b1e8bf9-70c0-4914-bc21-9baceebf8df5, numero=C001, clienteId=3 (truncated)...]
+2025-12-23T23:37:18.185Z DEBUG 3102 --- [ticketero-api-test] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.ticketero.controller.TicketController#getTicket(UUID)
+2025-12-23T23:37:18.201Z DEBUG 3102 --- [ticketero-api-test] [           main] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.cliente_id,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        ticket t1_0 
+    where
+        t1_0.codigo_referencia=?
+Hibernate: 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.assigned_advisor_id,
+        t1_0.assigned_module_number,
+        t1_0.branch_office,
+        t1_0.cliente_id,
+        t1_0.codigo_referencia,
+        t1_0.created_at,
+        t1_0.estimated_wait_minutes,
+        t1_0.numero,
+        t1_0.position_in_queue,
+        t1_0.queue_type,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        ticket t1_0 
+    where
+        t1_0.codigo_referencia=?
+2025-12-23T23:37:18.213Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-23T23:37:18.214Z DEBUG 3102 --- [ticketero-api-test] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TicketResponse[id=2, codigoReferencia=4b1e8bf9-70c0-4914-bc21-9baceebf8df5, numero=C001, clienteId=3 (truncated)...]
+]]></system-out>
+  </testcase>
+</testsuite>

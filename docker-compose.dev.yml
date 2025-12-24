@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: ticketero-postgres-dev
+    environment:
+      POSTGRES_DB: ticketero
+      POSTGRES_USER: ticketero_user
+      POSTGRES_PASSWORD: ticketero_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ticketero-network
+
+  app-dev:
+    image: maven:3.9-eclipse-temurin-21
+    container_name: ticketero-app-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - maven_cache:/root/.m2
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ticketero
+      SPRING_DATASOURCE_USERNAME: ticketero_user
+      SPRING_DATASOURCE_PASSWORD: ticketero_pass
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+    ports:
+      - "8080:8080"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    networks:
+      - ticketero-network
+    command: tail -f /dev/null
+
+volumes:
+  postgres_data:
+  maven_cache:
+
+networks:
+  ticketero-network:
+    driver: bridge

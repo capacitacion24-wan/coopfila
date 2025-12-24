@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.ticketero.integration.SetupValidationIT
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 67.82 s -- in com.example.ticketero.integration.SetupValidationIT

@@ -1,0 +1,149 @@
+package com.example.ticketero.integration;
+
+import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.*;
+
+@DisplayName("Feature: Creación de Tickets E2E")
+class TicketCreationE2ETest extends BaseIntegrationTest {
+
+    @Nested
+    @DisplayName("Escenarios Happy Path")
+    class HappyPath {
+
+        @Test
+        @DisplayName("Crear ticket con datos válidos → 201 + status EN_ESPERA + mensajes programados")
+        void crearTicket_datosValidos_debeCrearConMensajes() {
+            // Given - Cliente existente
+            Long clienteId = getExistingClienteId();
+
+            // When
+            Response response = given()
+                .contentType("application/json")
+                .body(createTicketRequest(clienteId, "CAJA"))
+            .when()
+                .post("/tickets")
+            .then()
+                .statusCode(201)
+                .body("numero", notNullValue())
+                .body("status", equalTo("EN_ESPERA"))
+                .body("queueType", equalTo("CAJA"))
+                .body("positionInQueue", greaterThan(0))
+                .body("estimatedWaitMinutes", greaterThanOrEqualTo(0))
+                .body("codigoReferencia", notNullValue())
+                .extract().response();
+
+            // Then - Verificar BD
+            String numero = response.jsonPath().getString("numero");
+            assertThat(numero).matches("C\\d{3}"); // C001, C002, etc.
+            assertThat(countTicketsInStatus("EN_ESPERA")).isGreaterThanOrEqualTo(1);
+
+            // Verificar mensajes programados
+            int mensajesPendientes = countMensajesInStatus("PENDIENTE");
+            assertThat(mensajesPendientes).isGreaterThanOrEqualTo(1);
+        }
+
+        @Test
+        @DisplayName("Calcular posición correcta con tickets existentes")
+        void crearTicket_conTicketsExistentes_debePosicionCorrecta() {
+            // Given - Cliente existente
+            Long clienteId = getExistingClienteId();
+            
+            // Crear 2 tickets previos
+            for (int i = 0; i < 2; i++) {
+                given()
+                    .contentType("application/json")
+                    .body(createTicketRequest(clienteId, "CAJA"))
+                .when()
+                    .post("/tickets")
+                .then()
+                    .statusCode(201);
+            }
+
+            // When - Crear ticket #3
+            Response response = given()
+                .contentType("application/json")
+                .body(createTicketRequest(clienteId, "CAJA"))
+            .when()
+                .post("/tickets")
+            .then()
+                .statusCode(201)
+                .extract().response();
+
+            // Then
+            int posicion = response.jsonPath().getInt("positionInQueue");
+            int tiempoEstimado = response.jsonPath().getInt("estimatedWaitMinutes");
+
+            assertThat(posicion).isGreaterThanOrEqualTo(3);
+            assertThat(tiempoEstimado).isGreaterThan(0);
+        }
+
+        @Test
+        @DisplayName("Crear tickets para diferentes colas → posiciones independientes")
+        void crearTickets_diferentesColas_posicionesIndependientes() {
+            // Given
+            Long clienteId = getExistingClienteId();
+            String[] colas = {"CAJA", "PERSONAL_BANKER", "EMPRESAS", "GERENCIA"};
+            String[] prefijos = {"C", "P", "E", "G"};
+
+            // When + Then - Crear un ticket por cada cola
+            for (int i = 0; i < colas.length; i++) {
+                Response response = given()
+                    .contentType("application/json")
+                    .body(createTicketRequest(clienteId, colas[i]))
+                .when()
+                    .post("/tickets")
+                .then()
+                    .statusCode(201)
+                    .extract().response();
+
+                // Verificar prefijo correcto
+                String numero = response.jsonPath().getString("numero");
+                assertThat(numero).startsWith(prefijos[i]);
+            }
+
+            // Verificar mensajes programados para todas las colas
+            assertThat(countMensajesInStatus("PENDIENTE")).isGreaterThanOrEqualTo(4);
+        }
+    }
+
+    @Nested
+    @DisplayName("Escenarios de Consulta")
+    class Consulta {
+
+        @Test
+        @DisplayName("Consultar ticket por código de referencia")
+        void consultarTicket_porCodigo_debeRetornarDatos() {
+            // Given - Crear ticket
+            Long clienteId = getExistingClienteId();
+            
+            Response createResponse = given()
+                .contentType("application/json")
+                .body(createTicketRequest(clienteId, "CAJA"))
+            .when()
+                .post("/tickets")
+            .then()
+                .statusCode(201)
+                .extract().response();
+
+            String codigoReferencia = createResponse.jsonPath().getString("codigoReferencia");
+
+            // When + Then
+            given()
+            .when()
+                .get("/tickets/" + codigoReferencia)
+            .then()
+                .statusCode(200)
+                .body("codigoReferencia", equalTo(codigoReferencia))
+                .body("status", equalTo("EN_ESPERA"))
+                .body("positionInQueue", notNullValue())
+                .body("estimatedWaitMinutes", notNullValue())
+                .body("clienteNombre", notNullValue());
+        }
+    }
+}

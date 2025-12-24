@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.ticketero.integration.TicketCreationE2ETest
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 49.92 s -- in com.example.ticketero.integration.TicketCreationE2ETest

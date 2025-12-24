@@ -1,0 +1,4 @@
+timestamp,cpu_app,mem_app_mb,cpu_postgres,mem_postgres_mb,db_connections,tickets_waiting,tickets_completed,tickets_called,advisors_busy,advisors_available
+2025-12-23 23:04:47,0.01,2.879,0.01,22.96,1,0,0,0,0,0
+2025-12-23 23:04:57,0.01,2.879,0.01,22.96,1,0,0,0,0,0
+2025-12-23 23:05:09,0.01,2.879,0.00,22.96,1,0,0,0,0,0
